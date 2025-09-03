@@ -1078,27 +1078,6 @@ body::before {
     margin: 30px 0;
   }
   
-  .user-circle {
-    width: 70px;
-    height: 70px;
-  }
-  
-  .circle-image {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .placeholder-icon {
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
-  }
-  
-  .circle-name {
-    font-size: 9px;
-    max-width: 60px;
-  }
-  
   .marker-label {
     font-size: 10px;
     padding: 3px 6px;
@@ -1176,27 +1155,6 @@ body::before {
   .rankings-container {
     padding: 20px 15px;
     margin-bottom: 25px;
-  }
-  
-  .user-circle {
-    width: 60px;
-    height: 60px;
-  }
-  
-  .circle-image {
-    width: 35px;
-    height: 35px;
-  }
-  
-  .placeholder-icon {
-    width: 35px;
-    height: 35px;
-    font-size: 16px;
-  }
-  
-  .circle-name {
-    font-size: 8px;
-    max-width: 50px;
   }
   
   .marker-label {
