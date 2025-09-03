@@ -123,16 +123,18 @@ body::before {
 .hero-container {
   max-width: 1200px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 100%;
-  justify-items: center;
+  text-align: center;
+  gap: 40px;
 }
 
 .hero-content {
   z-index: 10;
+  max-width: 800px;
 }
 
 .hero-logo {
@@ -612,9 +614,7 @@ body::before {
   }
   
   .hero-container {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    text-align: center;
+    gap: 30px;
   }
   
   .hero-logo-img {
