@@ -93,12 +93,14 @@ class NumberLine {
       imageUrl = await this.fileToBase64(file);
     }
 
+    // Find a non-overlapping position for the new user
+    const initialPosition = this.findAvailablePosition();
     // Create user object
     const user = {
       id: Date.now() + Math.random(),
       name,
       image: imageUrl,
-      position: 50, // Start at center
+      position: initialPosition,
       value: 0,
       isFromDatabase: false
     };
@@ -114,6 +116,8 @@ class NumberLine {
       }
     }
 
+    // Update the user's value based on the calculated position
+    user.value = this.positionToValue(user.position);
     this.users.push(user);
     this.createUserCircle(user);
     this.updateUI();
@@ -237,6 +241,78 @@ class NumberLine {
     return adjustedPosition;
   }
   selectUser(user) {
+  findAvailablePosition() {
+    const minDistance = 8; // Minimum distance between circles (in percentage)
+    
+    // If no users exist, start at center
+    if (this.users.length === 0) {
+      return 50;
+    }
+    
+    // Try positions from center outward
+    const positions = [50, 42, 58, 34, 66, 26, 74, 18, 82, 10, 90];
+    
+    for (const testPosition of positions) {
+      let isAvailable = true;
+      
+      // Check if this position conflicts with any existing user
+      for (const existingUser of this.users) {
+        const distance = Math.abs(testPosition - existingUser.position);
+        if (distance < minDistance) {
+          isAvailable = false;
+          break;
+        }
+      }
+      
+      if (isAvailable) {
+        return testPosition;
+      }
+    }
+    
+    // If all predefined positions are taken, find the largest gap
+    return this.findLargestGap();
+  }
+  
+  findLargestGap() {
+    if (this.users.length === 0) return 50;
+    
+    // Sort users by position
+    const sortedUsers = [...this.users].sort((a, b) => a.position - b.position);
+    
+    let largestGap = 0;
+    let bestPosition = 50;
+    
+    // Check gap before first user
+    if (sortedUsers[0].position > 8) {
+      const gapSize = sortedUsers[0].position;
+      if (gapSize > largestGap) {
+        largestGap = gapSize;
+        bestPosition = Math.max(4, sortedUsers[0].position - 8);
+      }
+    }
+    
+    // Check gaps between users
+    for (let i = 0; i < sortedUsers.length - 1; i++) {
+      const gapSize = sortedUsers[i + 1].position - sortedUsers[i].position;
+      if (gapSize > largestGap && gapSize > 16) { // Need at least 16% for two 8% buffers
+        largestGap = gapSize;
+        bestPosition = sortedUsers[i].position + (gapSize / 2);
+      }
+    }
+    
+    // Check gap after last user
+    const lastUser = sortedUsers[sortedUsers.length - 1];
+    if (lastUser.position < 92) {
+      const gapSize = 100 - lastUser.position;
+      if (gapSize > largestGap) {
+        largestGap = gapSize;
+        bestPosition = Math.min(96, lastUser.position + 8);
+      }
+    }
+    
+    return bestPosition;
+  }
+  
     this.selectedUser = user;
     
     // Update visual selection
