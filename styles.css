@@ -563,7 +563,6 @@ body::before {
   transform: translate(-50%, -50%);
   width: 60px;
   height: 60px;
-  background: rgba(30, 30, 50, 0.95);
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
