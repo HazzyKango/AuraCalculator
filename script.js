@@ -179,7 +179,10 @@ class NumberLine {
       const numberLineRect = document.querySelector('.number-line').getBoundingClientRect();
       const deltaX = e.clientX - startX;
       const deltaPercent = (deltaX / numberLineRect.width) * 100;
-      const newPosition = Math.max(0, Math.min(100, startPosition + deltaPercent));
+      let newPosition = Math.max(0, Math.min(100, startPosition + deltaPercent));
+      
+      // Check for overlaps and adjust position
+      newPosition = this.adjustPositionForOverlap(user, newPosition);
 
       user.position = newPosition;
       user.value = this.positionToValue(newPosition);
@@ -209,6 +212,30 @@ class NumberLine {
     document.addEventListener('mouseup', handleMouseUp);
   }
 
+  adjustPositionForOverlap(currentUser, newPosition) {
+    const minDistance = 8; // Minimum distance between circles (in percentage)
+    let adjustedPosition = newPosition;
+    
+    // Check against all other users
+    for (const otherUser of this.users) {
+      if (otherUser.id === currentUser.id) continue;
+      
+      const distance = Math.abs(adjustedPosition - otherUser.position);
+      
+      if (distance < minDistance) {
+        // Determine which direction to move
+        if (adjustedPosition > otherUser.position) {
+          // Move right
+          adjustedPosition = Math.min(100, otherUser.position + minDistance);
+        } else {
+          // Move left
+          adjustedPosition = Math.max(0, otherUser.position - minDistance);
+        }
+      }
+    }
+    
+    return adjustedPosition;
+  }
   selectUser(user) {
     this.selectedUser = user;
     

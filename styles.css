@@ -561,8 +561,8 @@ body::before {
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   background: rgba(30, 30, 50, 0.95);
   border: 3px solid rgba(0, 212, 255, 0.5);
   border-radius: 50%;
@@ -579,6 +579,7 @@ body::before {
   pointer-events: all;
   z-index: 10;
   overflow: hidden;
+  min-width: 60px;
 }
 
 .user-circle:hover {
@@ -606,8 +607,8 @@ body::before {
 }
 
 .circle-image {
-  width: 50px;
-  height: 50px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   overflow: hidden;
   margin-bottom: 4px;
@@ -621,27 +622,27 @@ body::before {
 }
 
 .placeholder-icon {
-  width: 50px;
-  height: 50px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
+  font-size: 18px;
   margin-bottom: 4px;
   border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .circle-name {
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 700;
   color: #e2e8f0;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   line-height: 1;
-  max-width: 70px;
+  max-width: 50px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
