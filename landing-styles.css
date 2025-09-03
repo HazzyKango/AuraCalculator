@@ -113,7 +113,8 @@ body::before {
 
 /* Hero Section */
 .hero {
-  min-height: 100vh;
+  min-height: calc(100vh - 80px);
+  padding-top: 80px;
   display: flex;
   align-items: center;
   padding: 20px 20px 50px;
@@ -180,6 +181,7 @@ body::before {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .btn {
@@ -610,7 +612,7 @@ body::before {
   }
   
   .hero {
-    padding: 120px 20px 50px;
+    padding: 80px 20px 50px;
   }
   
   .hero-container {
@@ -704,7 +706,7 @@ body::before {
   }
   
   .hero {
-    padding: 100px 15px 40px;
+    padding: 80px 15px 40px;
   }
   
   .hero-logo-img {
