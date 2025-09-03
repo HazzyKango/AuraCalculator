@@ -564,7 +564,6 @@ body::before {
   width: 60px;
   height: 60px;
   background: rgba(30, 30, 50, 0.95);
-  border: 3px solid rgba(0, 212, 255, 0.5);
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -584,14 +583,13 @@ body::before {
 
 .user-circle:hover {
   transform: translate(-50%, -50%) scale(1.1);
-  border-color: #00d4ff;
   box-shadow: 
     0 12px 35px rgba(0, 0, 0, 0.4),
     0 0 30px rgba(0, 212, 255, 0.4);
 }
 
 .user-circle.selected {
-  border-color: #ff0080;
+  border: 3px solid #ff0080;
   box-shadow: 
     0 12px 35px rgba(0, 0, 0, 0.4),
     0 0 30px rgba(255, 0, 128, 0.5);
@@ -856,10 +854,12 @@ body::before {
   grid-template-columns: 80px 1fr 150px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .table-row:hover {
   background: rgba(0, 212, 255, 0.05);
+  transform: translateX(5px);
 }
 
 .table-row > div {

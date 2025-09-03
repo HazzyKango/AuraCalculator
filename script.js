@@ -437,7 +437,7 @@ class NumberLine {
         : `<div class="table-placeholder">👤</div>`;
       
       return `
-        <div class="table-row">
+        <div class="table-row" data-user-id="${user.id}">
           <div class="rank-col">${index + 1}</div>
           <div class="user-col">
             ${imageHtml}
@@ -449,6 +449,17 @@ class NumberLine {
         </div>
       `;
     }).join('');
+    
+    // Add click event listeners to ranking rows
+    rankingsBody.querySelectorAll('.table-row').forEach(row => {
+      row.addEventListener('click', (e) => {
+        const userId = row.dataset.userId;
+        const user = this.users.find(u => u.id == userId);
+        if (user) {
+          this.selectUser(user);
+        }
+      });
+    });
   }
 }
 
