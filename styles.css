@@ -559,7 +559,7 @@ body::before {
 
 .user-circle {
   position: absolute;
-  top: 50%;
+  top: 35%;
   transform: translate(-50%, -50%);
   width: 45px;
   height: 45px;
@@ -632,7 +632,7 @@ body::before {
 }
 
 .circle-name {
-  font-size: 7px;
+  font-size: 8px;
   font-weight: 700;
   color: #e2e8f0;
   text-align: center;
@@ -644,7 +644,7 @@ body::before {
   text-overflow: ellipsis;
   white-space: nowrap;
   position: absolute;
-  bottom: -12px;
+  top: -15px;
   left: 50%;
   transform: translateX(-50%);
   background: rgba(15, 15, 35, 0.9);
