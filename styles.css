@@ -558,7 +558,7 @@ body::before {
 
 .user-circle {
   position: absolute;
-  top: 40%;
+  top: 50%;
   transform: translate(-50%, -50%);
   width: 45px;
   height: 45px;
@@ -579,6 +579,13 @@ body::before {
   min-width: 45px;
 }
 
+.user-circle.above-line {
+  top: 30%;
+}
+
+.user-circle.below-line {
+  top: 70%;
+}
 .user-circle:hover {
   transform: translate(-50%, -50%) scale(1.1);
   box-shadow: 
@@ -586,6 +593,13 @@ body::before {
     0 0 30px rgba(0, 212, 255, 0.4);
 }
 
+.user-circle.above-line:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.user-circle.below-line:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
 .user-circle.selected {
   border: 3px solid #ff0080;
   box-shadow: 
@@ -594,6 +608,13 @@ body::before {
   transform: translate(-50%, -50%) scale(1.15);
 }
 
+.user-circle.above-line.selected {
+  transform: translate(-50%, -50%) scale(1.15);
+}
+
+.user-circle.below-line.selected {
+  transform: translate(-50%, -50%) scale(1.15);
+}
 .user-circle.dragging {
   transform: translate(-50%, -50%) scale(1.2);
   z-index: 20;
@@ -602,6 +623,13 @@ body::before {
     0 0 40px rgba(0, 212, 255, 0.6);
 }
 
+.user-circle.above-line.dragging {
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+.user-circle.below-line.dragging {
+  transform: translate(-50%, -50%) scale(1.2);
+}
 .circle-image {
   width: 40px;
   height: 40px;
@@ -631,27 +659,35 @@ body::before {
 }
 
 .circle-name {
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 700;
   color: #e2e8f0;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   line-height: 1;
-  max-width: 40px;
+  max-width: 60px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   position: absolute;
-  top: -15px;
+  top: -20px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(15, 15, 35, 0.95);
-  padding: 2px 4px;
+  background: rgba(15, 15, 35, 0.98);
+  padding: 3px 6px;
   border-radius: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.4),
+    0 0 10px rgba(0, 212, 255, 0.2);
   z-index: 15;
+  backdrop-filter: blur(10px);
+}
+
+.user-circle.below-line .circle-name {
+  top: auto;
+  bottom: -20px;
 }
 
 /* Selected User Info */

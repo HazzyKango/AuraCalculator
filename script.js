@@ -139,7 +139,12 @@ class NumberLine {
 
   createUserCircle(user) {
     const circle = document.createElement('div');
-    circle.className = 'user-circle';
+    
+    // Alternate between above and below the line based on user index
+    const userIndex = this.users.length;
+    const positionClass = userIndex % 2 === 0 ? 'above-line' : 'below-line';
+    circle.className = `user-circle ${positionClass}`;
+    
     circle.style.left = `${user.position}%`;
     circle.dataset.userId = user.id;
 
