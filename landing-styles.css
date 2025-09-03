@@ -618,7 +618,7 @@ body::before {
   
   .hero-container {
     padding-top: -200px;
-    padding-bottom: 400px;
+    padding-bottom: 200px;
     gap: 10px;
   }
   
