@@ -617,11 +617,11 @@ body::before {
   }
   
   .hero-container {
-    gap: 30px;
+    gap: 10px;
   }
   
   .hero-visual {
-    height: 300px;
+    height: 100px;
   }
   
   .floating-circle {
