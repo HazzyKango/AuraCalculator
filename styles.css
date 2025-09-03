@@ -584,11 +584,11 @@ body::before {
 }
 
 .user-circle.above-line {
-  top: 35%;
+  top: 25%;
 }
 
 .user-circle.below-line {
-  top: 65%;
+  top: 75%;
 }
 .user-circle:hover {
   transform: translate(-50%, -50%) scale(1.1);
