@@ -289,6 +289,7 @@ body::before {
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   animation: float 6s ease-in-out infinite;
+  z-index: -1;
 }
 
 .circle-1 {
@@ -619,6 +620,42 @@ body::before {
     gap: 30px;
   }
   
+  .hero-visual {
+    height: 300px;
+  }
+  
+  .floating-circle {
+    opacity: 0.3;
+  }
+  
+  .circle-1 {
+    width: 80px;
+    height: 80px;
+    top: 5%;
+    left: 10%;
+  }
+  
+  .circle-2 {
+    width: 60px;
+    height: 60px;
+    top: 70%;
+    right: 5%;
+  }
+  
+  .circle-3 {
+    width: 70px;
+    height: 70px;
+    bottom: 10%;
+    left: 5%;
+  }
+  
+  .circle-4 {
+    width: 50px;
+    height: 50px;
+    top: 40%;
+    right: 15%;
+  }
+  
   .hero-logo-img {
     width: 280px;
     height: 84px;
@@ -707,6 +744,42 @@ body::before {
   
   .hero {
     padding: 80px 15px 40px;
+  }
+  
+  .hero-visual {
+    height: 200px;
+  }
+  
+  .floating-circle {
+    opacity: 0.2;
+  }
+  
+  .circle-1 {
+    width: 60px;
+    height: 60px;
+    top: 0%;
+    left: 5%;
+  }
+  
+  .circle-2 {
+    width: 40px;
+    height: 40px;
+    top: 80%;
+    right: 0%;
+  }
+  
+  .circle-3 {
+    width: 50px;
+    height: 50px;
+    bottom: 5%;
+    left: 0%;
+  }
+  
+  .circle-4 {
+    width: 35px;
+    height: 35px;
+    top: 50%;
+    right: 10%;
   }
   
   .hero-logo-img {
