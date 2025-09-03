@@ -240,7 +240,6 @@ class NumberLine {
     
     return adjustedPosition;
   }
-  selectUser(user) {
   findAvailablePosition() {
     const minDistance = 8; // Minimum distance between circles (in percentage)
     
@@ -313,6 +312,7 @@ class NumberLine {
     return bestPosition;
   }
   
+  selectUser(user) {
     this.selectedUser = user;
     
     // Update visual selection
