@@ -43,9 +43,10 @@ export async function joinRoom(inviteCode) {
     .from('rooms')
     .select('*')
     .eq('invite_code', inviteCode.toUpperCase())
-    .single();
+    .maybeSingle();
     
   if (error) throw error;
+  if (!data) throw new Error('Room not found with that invite code');
   return data;
 }
 
