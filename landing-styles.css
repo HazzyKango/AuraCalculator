@@ -609,7 +609,8 @@ body::before {
   }
   
   .hero {
-    padding: 40px 20px 30px;
+    padding: 20px 20px 30px;
+    min-height: 80vh;
   }
   
   .hero-container {
@@ -705,7 +706,8 @@ body::before {
   }
   
   .hero {
-    padding: 20px 15px 30px;
+    padding: 10px 15px 20px;
+    min-height: 70vh;
   }
   
   .hero-logo-img {
