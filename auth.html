@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Aura Tracker - Login & Sign Up</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="auth-styles.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="nav">
+      <button class="nav-toggle" id="navToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-menu" id="navMenu">
+        <a href="landing.html" class="nav-item">Home</a>
+        <a href="auraform.html" class="nav-item">Calculate Aura</a>
+        <a href="index.html" class="nav-item">Number Line</a>
+        <a href="auth.html" class="nav-item active">Login / Sign Up</a>
+      </div>
+    </nav>
+
+    <main>
+      <div class="container main-content">
+        <div class="auth-container">
+          <div class="logo-container">
+            <img src="logo.svg" alt="Aura Tracker Logo" class="main-logo" />
+          </div>
+          
+          <div class="auth-tabs">
+            <button class="tab-btn active" id="loginTab">Login</button>
+            <button class="tab-btn" id="signupTab">Sign Up</button>
+          </div>
+          
+          <!-- Login Form -->
+          <div class="auth-form-container" id="loginForm">
+            <form class="auth-form">
+              <h2>Welcome Back</h2>
+              <p class="form-subtitle">Sign in to track your aura</p>
+              
+              <div class="form-group">
+                <label for="loginEmail">Email</label>
+                <input type="email" id="loginEmail" name="email" placeholder="Enter your email..." required />
+              </div>
+              
+              <div class="form-group">
+                <label for="loginPassword">Password</label>
+                <input type="password" id="loginPassword" name="password" placeholder="Enter your password..." required />
+              </div>
+              
+              <button type="submit" class="auth-btn">
+                <span class="btn-text">Sign In</span>
+                <span class="btn-glow"></span>
+              </button>
+              
+              <div class="form-footer">
+                <a href="#" class="forgot-link">Forgot your password?</a>
+              </div>
+            </form>
+          </div>
+          
+          <!-- Sign Up Form -->
+          <div class="auth-form-container" id="signupForm" style="display: none;">
+            <form class="auth-form">
+              <h2>Join Aura Tracker</h2>
+              <p class="form-subtitle">Create your account to get started</p>
+              
+              <div class="form-group">
+                <label for="signupName">Full Name</label>
+                <input type="text" id="signupName" name="name" placeholder="Enter your full name..." required />
+              </div>
+              
+              <div class="form-group">
+                <label for="signupEmail">Email</label>
+                <input type="email" id="signupEmail" name="email" placeholder="Enter your email..." required />
+              </div>
+              
+              <div class="form-group">
+                <label for="signupPassword">Password</label>
+                <input type="password" id="signupPassword" name="password" placeholder="Create a password..." required />
+              </div>
+              
+              <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password..." required />
+              </div>
+              
+              <button type="submit" class="auth-btn">
+                <span class="btn-text">Create Account</span>
+                <span class="btn-glow"></span>
+              </button>
+              
+              <div class="form-footer">
+                <p class="terms-text">By signing up, you agree to our Terms of Service</p>
+              </div>
+            </form>
+          </div>
+          
+          <div class="quick-actions">
+            <h3>Quick Access</h3>
+            <div class="quick-buttons">
+              <a href="auraform.html" class="quick-btn">
+                <span class="quick-icon">📊</span>
+                <span>Calculate Aura</span>
+              </a>
+              <a href="index.html" class="quick-btn">
+                <span class="quick-icon">📈</span>
+                <span>View Rankings</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      // Navigation toggle
+      const navToggle = document.getElementById('navToggle');
+      const navMenu = document.getElementById('navMenu');
+      
+      navToggle.addEventListener('click', () => {
+        navToggle.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+      
+      document.querySelectorAll('.nav-item').forEach(item => {
+        item.addEventListener('click', () => {
+          navToggle.classList.remove('active');
+          navMenu.classList.remove('active');
+        });
+      });
+    </script>
+    <script type="module" src="auth-script.js"></script>
+  </body>
+</html>

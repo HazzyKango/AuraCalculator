@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Global Aura Tracker</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="auraform-styles.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="nav">
+      <button class="nav-toggle" id="navToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-menu" id="navMenu">
+        <a href="landing.html" class="nav-item">Home</a>
+        <a href="auraform.html" class="nav-item active">Calculate Aura</a>
+        <a href="index.html" class="nav-item">Number Line</a>
+        <a href="auth.html" class="nav-item">Login / Sign Up</a>
+      </div>
+    </nav>
+
+    <main>
+      <div class="container main-content">
+        <div class="logo-container">
+          <img src="logo.svg" alt="Aura Calculator Logo" class="main-logo" />
+        </div>
+        
+        <h1 id="titleh">Global Aura Tracker</h1>
+        
+        <div class="form-container">
+          <p id="titlep">Ready to see how much aura you have?</p>
+          <form id="auraForm" class="aura-form">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="name">What's your name?</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name..." required />
+              </div>
+              
+              <div class="form-group">
+                <label for="age">How old are you?</label>
+                <input type="number" id="age" name="age" min="13" max="100" placeholder="Enter your age..." required />
+              </div>
+              
+              <div class="form-group">
+                <label for="income">How much money do you make a year?</label>
+                <select id="income" name="income" required>
+                  <option value="">--Select your income range--</option>
+                  <option value="20000">$20,000 or less</option>
+                  <option value="40000">$40,000 or less</option>
+                  <option value="60000">$60,000 or less</option>
+                  <option value="80000">$80,000 or less</option>
+                  <option value="100000">$100,000 or less</option>
+                  <option value="150000">$150,000 or less</option>
+                  <option value="200000">$200,000+</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="height">What's your height?</label>
+                <select id="height" name="height" required>
+                  <option value="">--Select your height--</option>
+                  <option value="60">5'0" or less</option>
+                  <option value="65">5'5" or less</option>
+                  <option value="71">5'11" or less</option>
+                  <option value="72">6'0" or more</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="relationship">Are you single?</label>
+                <select id="relationship" name="relationship" required>
+                  <option value="">--Select status--</option>
+                  <option value="single">Yes, I'm single</option>
+                  <option value="taken">No, I'm taken</option>
+                  <option value="complicated">It's complicated</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="weight">How much do you weigh?</label>
+                <input type="number" id="weight" name="weight" min="80" max="400" placeholder="Weight in lbs..." required />
+              </div>
+            </div>
+            
+            <div class="submit-container">
+              <button type="submit" class="calculate-btn">
+                <span class="btn-text">Calculate My Aura</span>
+                <span class="btn-glow"></span>
+              </button>
+            </div>
+          </form>
+        </div>
+        
+        <div id="resultContainer" class="result-container" style="display: none;">
+          <div class="result-card">
+            <h2>Your Aura Score</h2>
+            <div class="aura-score">
+              <span id="auraScore">0</span>
+              <span class="score-suffix">Aura Points</span>
+            </div>
+            <div class="aura-breakdown">
+              <h3>Breakdown:</h3>
+              <div id="breakdown" class="breakdown-list"></div>
+            </div>
+            <div class="result-actions">
+              <button id="retakeBtn" class="retake-btn">Retake Quiz</button>
+              <a href="index.html" class="continue-btn">Continue to Number Line</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="navigation">
+          <a href="index.html" class="nav-link">← Back to Number Line</a>
+          <a href="auth.html" class="nav-link">Login / Sign Up →</a>
+        </div>
+      </div>
+    </main>
+    
+    <script src="auraform-script.js"></script>
+  </body>
+</html>

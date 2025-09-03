@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Aura Tracker - Number Line</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="nav">
+      <button class="nav-toggle" id="navToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-menu" id="navMenu">
+        <a href="landing.html" class="nav-item">Home</a>
+        <a href="auraform.html" class="nav-item">Calculate Aura</a>
+        <a href="index.html" class="nav-item active">Number Line</a>
+        <a href="auth.html" class="nav-item">Login / Sign Up</a>
+      </div>
+    </nav>
+
+    <main class="main-content">
+      <div class="container">
+        <!-- Logo -->
+        <div class="logo-container">
+          <img src="logo.svg" alt="Aura Tracker Logo" class="main-logo" />
+        </div>
+        
+        <h1 id="titleh">Interactive Number Line</h1>
+        <p id="titlep">Drag users to adjust their aura or use the controls below</p>
+        
+        <!-- Add User Form -->
+        <div class="add-user-container">
+          <h2>Add New User</h2>
+          <form class="add-user-form">
+            <div class="form-row">
+              <input type="text" id="userName" placeholder="Enter user name..." maxlength="20" />
+              <div class="file-upload-container">
+                <input type="file" id="userImage" class="file-input" accept=".jpg,.jpeg" />
+                <label for="userImage" class="file-upload-btn">Choose JPEG</label>
+              </div>
+              <button type="button" id="addUserBtn" class="add-btn">Add User</button>
+            </div>
+          </form>
+        </div>
+        
+        <!-- Number Line -->
+        <div class="number-line-container">
+          <div class="number-line">
+            <div class="line"></div>
+            <div class="markers">
+              <div class="marker">
+                <div class="marker-label">-1B</div>
+              </div>
+              <div class="marker">
+                <div class="marker-label">-500M</div>
+              </div>
+              <div class="marker center-marker">
+                <div class="marker-label">0</div>
+              </div>
+              <div class="marker">
+                <div class="marker-label">+500M</div>
+              </div>
+              <div class="marker">
+                <div class="marker-label">+1B</div>
+              </div>
+            </div>
+            <div id="userCircles" class="user-circles"></div>
+          </div>
+        </div>
+        
+        <!-- Selected User Info -->
+        <div id="selectedUserInfo" class="selected-user-info" style="display: none;">
+          <h3>Selected User</h3>
+          <div class="user-details">
+            <div class="user-info">
+              <div class="user-name" id="selectedUserName">User Name</div>
+              <div class="user-position" id="selectedUserPosition">+0</div>
+            </div>
+            <div class="aura-adjustment">
+              <label for="auraAmount">Aura Amount:</label>
+              <div class="aura-controls">
+                <input type="number" id="auraAmount" value="1000000" min="1" max="1000000000" />
+                <button id="gainBtn" class="aura-btn gain-btn">Aura Gain</button>
+                <button id="lossBtn" class="aura-btn loss-btn">Aura Loss</button>
+                <button id="deleteUserBtn" class="delete-btn">Delete User</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Rankings -->
+        <div class="rankings-container">
+          <h2>Current Rankings</h2>
+          <div class="rankings-table">
+            <div class="table-header">
+              <div>Rank</div>
+              <div>User</div>
+              <div>Aura</div>
+            </div>
+            <div id="rankingsBody" class="table-body">
+              <div class="empty-state">
+                <p>No users added yet. Add some users to see rankings!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Navigation Links -->
+        <div class="navigation">
+          <a href="auraform.html" class="nav-link">← Calculate Aura</a>
+          <a href="auth.html" class="nav-link">Login / Sign Up →</a>
+        </div>
+      </div>
+    </main>
+
+    <script src="navigation.js"></script>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

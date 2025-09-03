@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Aura Tracker - The Ultimate Social Ranking Platform</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="landing-styles.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="nav">
+      <button class="nav-toggle" id="navToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-menu" id="navMenu">
+        <a href="landing.html" class="nav-item active">Home</a>
+        <a href="auraform.html" class="nav-item">Calculate Aura</a>
+        <a href="index.html" class="nav-item">Number Line</a>
+        <a href="auth.html" class="nav-item">Login / Sign Up</a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-container">
+        <div class="hero-visual">
+          <div class="floating-elements">
+            <div class="floating-circle circle-1"></div>
+            <div class="floating-circle circle-2"></div>
+            <div class="floating-circle circle-3"></div>
+            <div class="floating-circle circle-4"></div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="floating-elements">
+            <div class="floating-circle circle-1"></div>
+            <div class="floating-circle circle-2"></div>
+        <div class="hero-content">
+          <div class="hero-logo">
+            <img src="logo.svg" alt="Aura Tracker Logo" class="hero-logo-img" />
+          </div>
+          <h1 class="hero-title">Track Your Social Aura</h1>
+          <p class="hero-subtitle">The ultimate platform to measure, compare, and visualize your social ranking among friends</p>
+          <div class="hero-buttons">
+            <a href="auraform.html" class="btn btn-primary">Calculate My Aura</a>
+            <a href="index.html" class="btn btn-secondary">View Number Line</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="floating-elements">
+            <div class="floating-circle circle-1"></div>
+            <div class="floating-circle circle-2"></div>
+            <div class="floating-circle circle-3"></div>
+            <div class="floating-circle circle-4"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+      <div class="features-container">
+        <h2 class="section-title">Discover Your Social Power</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3>Aura Calculator</h3>
+            <p>Get your personalized aura score based on multiple factors including age, income, and social status</p>
+            <a href="auraform.html" class="feature-btn">Calculate Now</a>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon">📈</div>
+            <h3>Interactive Number Line</h3>
+            <p>Visualize and compare up to 5 users on a dynamic ranking system from -1B to +1B aura points</p>
+            <a href="index.html" class="feature-btn">View Rankings</a>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon">👥</div>
+            <h3>Social Comparison</h3>
+            <p>Add friends, drag to reposition, and see real-time rankings with beautiful visual feedback</p>
+            <a href="index.html" class="feature-btn">Compare Friends</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+      <div class="how-it-works-container">
+        <h2 class="section-title">How It Works</h2>
+        <div class="steps-grid">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Calculate Your Aura</h3>
+            <p>Fill out our comprehensive form to get your initial aura score based on various life factors</p>
+          </div>
+          
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Add to Number Line</h3>
+            <p>Place yourself and up to 4 friends on the interactive number line to see visual rankings</p>
+          </div>
+          
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Track & Compare</h3>
+            <p>Adjust positions, gain or lose aura points, and watch the dynamic rankings update in real-time</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+      <div class="cta-container">
+        <div class="cta-content">
+          <h2>Ready to Discover Your Aura?</h2>
+          <p>Join thousands of users tracking their social rankings and see where you stand</p>
+          <div class="cta-buttons">
+            <a href="auraform.html" class="btn btn-primary btn-large">Get Started Now</a>
+            <a href="auth.html" class="btn btn-outline btn-large">Sign Up Free</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <img src="logo.svg" alt="Aura Tracker" class="footer-logo-img" />
+          </div>
+          <div class="footer-links">
+            <a href="landing.html">Home</a>
+            <a href="auraform.html">Calculate</a>
+            <a href="index.html">Rankings</a>
+            <a href="auth.html">Account</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Aura Tracker. Track your social power.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Simple navigation toggle
+      const navToggle = document.getElementById('navToggle');
+      const navMenu = document.getElementById('navMenu');
+      
+      navToggle.addEventListener('click', () => {
+        navToggle.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+      
+      // Close menu when clicking nav items
+      document.querySelectorAll('.nav-item').forEach(item => {
+        item.addEventListener('click', () => {
+          navToggle.classList.remove('active');
+          navMenu.classList.remove('active');
+        });
+      });
+    </script>
+  </body>
+</html>
