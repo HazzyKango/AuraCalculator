@@ -113,7 +113,7 @@ body::before {
 
 /* Hero Section */
 .hero {
-  min-height: 60vh;
+  min-height: 40vh;
   padding-top: 80px;
   display: flex;
   align-items: center;
