@@ -508,7 +508,7 @@ body::before {
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 2;
+  z-index: 5;
 }
 
 .marker::before {
@@ -578,17 +578,17 @@ body::before {
     0 8px 25px rgba(0, 0, 0, 0.3),
     0 0 20px rgba(0, 212, 255, 0.2);
   pointer-events: all;
-  z-index: 10;
+  z-index: 1;
   overflow: hidden;
   min-width: 45px;
 }
 
 .user-circle.above-line {
-  top: 30%;
+  top: 35%;
 }
 
 .user-circle.below-line {
-  top: 80%;
+  top: 65%;
 }
 .user-circle:hover {
   transform: translate(-50%, -50%) scale(1.1);
