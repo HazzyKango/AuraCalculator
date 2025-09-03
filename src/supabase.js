@@ -32,7 +32,7 @@ export async function createRoom(name) {
       created_by: user.id
     })
     .select()
-    .single();
+    .maybeSingle();
     
   if (error) throw error;
   return data;
@@ -72,7 +72,7 @@ export async function addUserToRoom(roomId, name, imageUrl = null) {
       value: 0
     })
     .select()
-    .single();
+    .maybeSingle();
     
   if (error) throw error;
   return data;

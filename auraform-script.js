@@ -72,9 +72,9 @@ class AuraCalculator {
     } else if (age >= 20 && age <= 35) {
       ageScore = 150000000;
     } else if (age >= 18 && age <= 40) {
-      ageScore = 100000000;
+      ageScore = -100000000;
     } else {
-      ageScore = 50000000;
+      ageScore = -50000000;
     }
     score += ageScore;
     breakdown.push({ label: 'Age Factor', value: ageScore });
@@ -93,9 +93,9 @@ class AuraCalculator {
     } else if (income >= 60000) {
       incomeScore = 100000000;
     } else if (income >= 40000) {
-      incomeScore = 50000000;
+      incomeScore = -50000000;
     } else {
-      incomeScore = 25000000;
+      incomeScore = -25000000;
     }
     score += incomeScore;
     breakdown.push({ label: 'Income Level', value: incomeScore });
@@ -108,9 +108,9 @@ class AuraCalculator {
     } else if (height >= 71) {
       heightScore = 100000000; // 5'11"
     } else if (height >= 65) {
-      heightScore = 75000000; // 5'5"
+      heightScore = -75000000; // 5'5"
     } else {
-      heightScore = 50000000; // 5'0" or shorter
+      heightScore = -50000000; // 5'0" or shorter
     }
     score += heightScore;
     breakdown.push({ label: 'Height Bonus', value: heightScore });
@@ -120,9 +120,9 @@ class AuraCalculator {
     if (data.relationship === 'taken') {
       relationshipScore = 100000000; // Being in a relationship shows social skills
     } else if (data.relationship === 'single') {
-      relationshipScore = 75000000; // Independence can be attractive
+      relationshipScore = -75000000; // Independence can be attractive
     } else {
-      relationshipScore = 25000000; // Complicated = less aura
+      relationshipScore = -25000000; // Complicated = less aura
     }
     score += relationshipScore;
     breakdown.push({ label: 'Relationship Status', value: relationshipScore });
@@ -135,9 +135,9 @@ class AuraCalculator {
     } else if (weight >= 120 && weight <= 240) {
       fitnessScore = 100000000; // Good range
     } else if (weight >= 100 && weight <= 280) {
-      fitnessScore = 75000000; // Acceptable range
+      fitnessScore = -75000000; // Acceptable range
     } else {
-      fitnessScore = 25000000; // Outside optimal range
+      fitnessScore = -25000000; // Outside optimal range
     }
     score += fitnessScore;
     breakdown.push({ label: 'Fitness Level', value: fitnessScore });

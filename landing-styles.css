@@ -282,9 +282,9 @@ body::before {
 .floating-circle {
   position: absolute;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(124, 58, 237, 0.05), rgba(0, 212, 255, 0.05));
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.3), rgba(0, 212, 255, 0.3));
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   animation: float 6s ease-in-out infinite;
 }
 
@@ -609,8 +609,7 @@ body::before {
   }
   
   .hero {
-    padding: 10px 20px 30px;
-    min-height: 80vh;
+    padding: 120px 20px 50px;
   }
   
   .hero-container {
@@ -706,8 +705,7 @@ body::before {
   }
   
   .hero {
-    padding: 5px 15px 20px;
-    min-height: 70vh;
+    padding: 100px 15px 40px;
   }
   
   .hero-logo-img {
