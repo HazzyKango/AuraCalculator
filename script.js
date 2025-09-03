@@ -447,6 +447,10 @@ class NumberLine {
             ${this.formatNumber(user.value)}
           </div>
         </div>
+      `;
+    }).join('');
+    
+    // Add event listeners after DOM update
     setTimeout(() => {
       rankingsBody.querySelectorAll('.table-row').forEach(row => {
         row.addEventListener('click', (e) => {
