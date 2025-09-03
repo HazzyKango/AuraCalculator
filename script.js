@@ -447,19 +447,23 @@ class NumberLine {
             ${this.formatNumber(user.value)}
           </div>
         </div>
-      `;
-    }).join('');
-    
-    // Add click event listeners to ranking rows
-    rankingsBody.querySelectorAll('.table-row').forEach(row => {
-      row.addEventListener('click', (e) => {
-        const userId = row.dataset.userId;
-        const user = this.users.find(u => u.id == userId);
-        if (user) {
-          this.selectUser(user);
-        }
+    setTimeout(() => {
+      rankingsBody.querySelectorAll('.table-row').forEach(row => {
+        row.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const userId = row.dataset.userId;
+          console.log('Clicked user ID:', userId); // Debug log
+          const user = this.users.find(u => String(u.id) === String(userId));
+          console.log('Found user:', user); // Debug log
+          if (user) {
+            this.selectUser(user);
+            // Scroll to selected user info
+            this.selectedUserInfo.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+        });
       });
-    });
+    }, 100);
   }
 }
 
