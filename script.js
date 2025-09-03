@@ -475,7 +475,3 @@ class NumberLine {
 document.addEventListener('DOMContentLoaded', () => {
   window.numberLine = new NumberLine();
 });
-    }
-    )
-  }
-}
